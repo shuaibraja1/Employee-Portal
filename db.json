@@ -1,0 +1,15 @@
+{
+  "EmployeeList": [],
+  "signupusers": [
+    {
+      "fullname": "ishuaibraja",
+      "email": "shuaib@gmail.com",
+      "password": "Admin810",
+      "mobile": "7981888647",
+      "id": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

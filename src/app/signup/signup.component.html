@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+       <div class="col-md-6">
+         <div class="card">
+          <div class="text-center">
+          <h1 style="color:rgb(242, 242, 242);">signup</h1>
+          <h4 style="color:rgb(242, 242, 242);">register yourself!!</h4>
+          </div>
+          <form > 
+            <form [formGroup]="signupform" (ngSubmit)="signUp()">
+            <div class="mb-3" >
+                <label style="color:rgb(242, 242, 242);" for="fullname" class="form-label">Full Name</label>
+                <input formControlName="fullname" type="text" class="form-control"  placeholder="Enter fullname" ><br>
+                <span class="text-danger"  *ngIf="signupform.controls['fullname'].dirty && signupform.hasError('required','fullname')">*Full name Should be more then 4 words </span>
+               
+            </div>
+
+              <div class="mb-3">
+                <label style="color:rgb(242, 242, 242);" for="phone" class="form-label">Moblie Number</label><br>
+                <input formControlName="mobile" type="tel" id="phone" name="phone" placeholder="Enter moblie number">
+                <div id="emailHelp" class="form-text">We'll never share your Number with anyone else.</div><br>
+                <span class="text-danger"  *ngIf="signupform.controls['mobile'].dirty && signupform.hasError('required','mobile')">*mobileNumber should be 10digits</span>
+              </div>
+
+             <div class="mb-3">
+                 <label style="color:rgb(242, 242, 242);" for="exampleInputEmail1" class="form-label">Email Address</label>
+                 <input formControlName="email" type="email" class="form-control"placeholder="Enter EmailAddress">
+                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div><br>
+                 <span class="text-danger"  *ngIf="signupform.controls['email'].dirty && signupform.hasError('required','email')">*email should be @gmail.com </span>
+               </div>
+
+               <div class="mb-3">
+                 <label style="color:rgb(242, 242, 242);" for="exampleInputPassword1" class="form-label">Password</label>
+                 <input formControlName="password" type="password" class="form-control" placeholder="Enter password"><br>
+                 <span class="text-danger"  *ngIf="signupform.controls['password'].dirty && signupform.hasError('required','password')">*password should be more then  6 characters </span>
+               </div>
+              
+               <button type="submit"[disabled]="!signupform.valid" class="btn btn-primary">signup</button>
+
+          </form><br></form>
+         
+           <a style="color: white;" routerLink="/login">Already have Registered? click tologin</a>
+       
+          </div>
+         </div>
+ 
+        </div>
+ </div>

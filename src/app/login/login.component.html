@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+       <div class="col-md-6">
+         <div class="card">
+          <div class="text-center">
+          <h1 style="color:rgb(242, 242, 242);">login</h1>
+          <h4 style="color:rgb(242, 242, 242);">Please Enter Email & password!!</h4>
+          </div>
+          <form>
+            <form [formGroup]="loginform" (ngSubmit)=" login()">
+                <div class="mb-3">
+                    <label style="color:rgb(242, 242, 242);" for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input formControlName="email" type="email" class="form-control"placeholder="Enter valid email address">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div><br>
+                  
+                  <span class="text-danger"  *ngIf="loginform.controls['email'].dirty && loginform.hasError('required','email')">*Enter email should be @gmail.com </span>
+                </div>
+                  <div class="mb-3">
+                    <label style="color:rgb(242, 242, 242);" for="exampleInputPassword1" class="form-label">Password</label>
+                    <input formControlName="password" type="password" class="form-control" placeholder="Enter correct password"><br>
+                    <span class="text-danger"  *ngIf="loginform.controls['password'].dirty && loginform.hasError('required','password')">*password should be more then  6 characters </span>
+                  
+                  </div>
+                 
+                  <button type="submit"[disabled]="!loginform.valid" class="btn btn-primary">login</button>
+             </form><br>
+             <a style="color: white;" routerLink="/signup">New User?click to signup</a>
+             
+          </form>
+          
+          </div>
+         </div>
+ 
+        </div>
+ </div>
